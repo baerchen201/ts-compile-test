@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy TypeScript website to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -31,8 +31,6 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build TypeScript files
         run: tsc
-      - name: Generate file tree for debugging
-        run: tree -lxsh --du
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
