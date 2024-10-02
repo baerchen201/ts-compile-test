@@ -16,6 +16,8 @@ jobs:
         run: cd ${{ github.workspace }}
       - name: Echo file list into files.txt
         run: ls -lh > files.txt
+      - name: Set up git
+        run: git config user.name github-actions-test ; git config user.email videocreator+github-actions@outlook.de
       - name: Commit changes to files.txt
         run: git add files.txt ; git commit -m "Update files.txt" ; git push
       - run: echo "🍏 This job's status is ${{ job.status }}."
